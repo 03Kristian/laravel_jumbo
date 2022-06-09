@@ -19,7 +19,7 @@
           <a class="nav-link" href="{{route('teachers.create')}}">Profesor</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{route('groups.index')}}">Grupos</a>
+          <a class="nav-link" href="{{route('groups.create')}}">Grupos</a>
         </li>
         <li class="nav-item">
           <a class="nav-link " href="{{route('subjects.create')}}">Materias</a>

@@ -34,8 +34,9 @@
                 <option value="1">Bachiller Academico</option>
                 <option value="2">Tecnico</option>
                 <option value="3">Tecnologo</option>
-                <option value="4">Magister</option>
-                <option value="5">Doctorado</option>
+                <option value="4">Profesional</option>
+                <option value="6">Magister</option>
+                <option value="7">Doctorado</option>
             </select>
             <div id="emailHelp" class="form-text">Elija almenos una opcion.</div>
 

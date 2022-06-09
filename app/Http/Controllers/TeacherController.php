@@ -71,7 +71,8 @@ class TeacherController extends Controller
      */
     public function edit($id)
     {
-        //
+        $teacher= Teacher::find($id);
+        return view('Teacher/edit',compact('teacher'));
     }
 
     /**
@@ -83,7 +84,17 @@ class TeacherController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $teachers= Teacher::findOrfail($id);
+        
+        $teachers->nombres = $request->nombres;
+        $teachers->apellidos = $request->apellidos;
+        $teachers->direccion = $request->direccion;
+        $teachers->correo  = $request->correo;
+        $teachers->celular = $request->celular;
+        $teachers->nivel_academico = $request->nivel_academico;
+        $teachers->save();
+        // return "Nuevo usuario creado!!";
+        return redirect()->route('teachers.index');
     }
 
     /**

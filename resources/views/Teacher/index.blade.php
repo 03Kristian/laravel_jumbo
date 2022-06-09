@@ -24,7 +24,16 @@
         <td scope="row"> {{$T->correo}}</td>
         <td scope="row"> {{$T->celular}}</td>
         <td scope="row"> {{$T->nivel_academico}}</td>
-        <td>@mdo</td>
+        <td>
+          <a href="{{route('teachers.edit',$T)}}" class="btn btn-warning" tabindex="-1" role="button" aria-disabled="true">Editar</a>
+        </td>
+        <td> 
+          <form action="" method="post">
+            @method('DELETE')
+            @csrf
+          <a href="{{route('teachers.destroy',$T)}}" class="btn btn-danger" tabindex="-1" role="button" aria-disabled="true">Eliminar</a>
+          </form>
+        </td>
       </tr>
       @endforeach
     </tbody>

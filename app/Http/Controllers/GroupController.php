@@ -17,9 +17,8 @@ class GroupController extends Controller
     public function index()
     {
         //
-        $teacher = Teacher::All();
-        $subjects = Subject::all();
-        return view('Groups.create', compact('teacher','subjects'));
+        $Groups= Group::simplePaginate();
+        return view('Groups.index',compact('Groups'));
     }
 
     /**
@@ -29,7 +28,9 @@ class GroupController extends Controller
      */
     public function create()
     {
-        //
+        $teacher = Teacher::All();
+        $subjects = Subject::all();
+        return view('Groups.create', compact('teacher','subjects'));
     }
 
     /**
@@ -67,9 +68,10 @@ class GroupController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $teacher)
+    //Request es el que trae los datos del formulario
     {
-        //
+        // return view('')
     }
 
     /**
@@ -92,6 +94,11 @@ class GroupController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // $group->delete();
+        // return redirect()->route('groups.index');
+
+        Group::destroy($id);
+        // return redirect()->route('groups.index');
+        return 'Se elimino el registro';
     }
 }
